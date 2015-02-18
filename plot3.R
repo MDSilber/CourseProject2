@@ -8,5 +8,5 @@ colnames(baltimoreData)[[5]] <- "Type" # So the name of the legend is capitalize
 
 aggregatedData <- aggregate(Emissions ~ year + Type, baltimoreData, sum)
 plot <- ggplot(aggregatedData, aes(year, Emissions, color=Type))
-plot <- plot + geom_line() + xlab("Year") + ylab("Emissions (tons)") + ggtitle("PM2.5 Emissions - Baltimore, MD")
+plot <- plot + geom_line() + xlab("Year") + ylab("Emissions (tons)") + ggtitle("PM2.5 Emissions\nBaltimore, MD")
 print(plot)
