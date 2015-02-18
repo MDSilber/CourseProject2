@@ -1,5 +1,4 @@
 NEI <- readRDS("summarySCC_PM25.rds")
-SCC <- readRDS("Source_Classification_Code.rds")
 
 baltimoreData <- NEI[NEI$fips == "24510", ]
 emissionSums <- sapply(unique(NEI$year), function(x) { sum(baltimoreData[baltimoreData$year == x, ]$Emission) } )
