@@ -14,8 +14,10 @@ processData <- function(data, codes) {
 baltimoreEmissions <- processData(baltimoreData, motorCodes)
 losAngelesEmissions <- processData(losAngelesData, motorCodes)
 
+png("plot6.png", width = 960, height = 480)
 par(mfrow = c(1,2))
 plot(baltimoreEmissions$Year, baltimoreEmissions$Emissions, xlab="Year", ylab="Emissions (tons)", ylim=c(0,350), main="Motor-related PM2.5 Emissions\nBaltimore, MD", pch=19)
 abline(lm(baltimoreEmissions$Emissions ~ baltimoreEmissions$Year), col="red")
 plot(losAngelesEmissions$Year, losAngelesEmissions$Emissions, xlab="Year", ylab="Emissions (tons)", ylim=c(0,5000), main="Motor-related PM2.5 Emissions\nLos Angeles, CA", pch=19)
 abline(lm(losAngelesEmissions$Emissions ~ losAngelesEmissions$Year), col="red")
+dev.off()
